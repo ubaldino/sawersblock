@@ -28,7 +28,7 @@ public class AtrasBlock extends TranslatorBlock {
     
     tb = this.getRequiredTranslatorBlockAtSocket( 1 );
     
-    String secuencia = "servo_pin_9.write( "+( 90 + velocity )+" );\nservo_pin_10.write( "+( 90 - velocity )+" );\n"+"delay( "+tb.toCode()+" );";
+    String secuencia = "servo_pin_9.write( "+(90 - velocity )+" );\nservo_pin_10.write( "+(90+velocity)+" );\n"+"delay( "+tb.toCode()+" );";
     return codePrefix + secuencia + codeSuffix+"\n";
   }
 }

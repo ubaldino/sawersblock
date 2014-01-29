@@ -369,7 +369,7 @@ public class CSlider extends JPanel implements MouseListener, MouseMotionListene
 
         // draws the tick marks if ticks are turned on
         // also draws where the triangle where thumb starts
-        g2.setColor(Color.lightGray);
+        g2.setColor(Color.black);
         if (this.tickNumber != 0 && this.setTicks) {
             Shape ticks = this.reformTicks(blueprint);
             g2.draw(ticks);

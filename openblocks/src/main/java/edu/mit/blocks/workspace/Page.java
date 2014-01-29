@@ -464,7 +464,7 @@ public class Page implements WorkspaceWidget, SearchableContainer, ISupportMemen
                     0,
                     (int) (this.abstractWidth * zoom),
                     (int) (this.abstractHeight * zoom));
-            this.getJComponent().setFont(new Font("Ariel", Font.PLAIN, (int) (12 * zoom)));
+            this.getJComponent().setFont(new Font("Roboto", Font.PLAIN, (int) (12 * zoom)));
             return (int) (this.abstractWidth * zoom);
         } else {
             this.getJComponent().setBounds(
@@ -472,7 +472,7 @@ public class Page implements WorkspaceWidget, SearchableContainer, ISupportMemen
                     0,
                     COLLAPSED_WIDTH + 2,
                     (int) (this.abstractHeight * zoom));
-            this.getJComponent().setFont(new Font("Ariel", Font.PLAIN, (int) (12 * zoom)));
+            this.getJComponent().setFont(new Font("Roboto", Font.PLAIN, (int) (12 * zoom)));
             return COLLAPSED_WIDTH + 2;
         }
 
@@ -1034,7 +1034,7 @@ public class Page implements WorkspaceWidget, SearchableContainer, ISupportMemen
                 }
             } else {
                 if (fullview) {
-                    paintFull(g, Color.gray);
+                    paintFull(g, Color.BLACK);
                 } else {
                     paintCollapsed(g, Color.gray);
                 }
@@ -1142,7 +1142,7 @@ class PageJComponent extends JLayeredPane implements RBParent {
         super.paintComponent(g);
         //set label color
         if (this.getBackground().getBlue() + this.getBackground().getGreen() + this.getBackground().getRed() > 400) {
-            g.setColor(Color.DARK_GRAY);
+            g.setColor(Color.BLACK);
         } else {
             g.setColor(Color.LIGHT_GRAY);
         }

@@ -290,7 +290,7 @@ class StackCard implements PropertyChangeListener {
             super();
             this.setOpaque(false);
             this.setBorder(null);
-            this.setFont(new Font("Ariel", Font.BOLD, buttonHeight - 3));
+            this.setFont(new Font("Roboto", Font.BOLD, buttonHeight - 3));
             this.setPreferredSize(new Dimension(0, buttonHeight));
             this.setCursor(new Cursor(Cursor.HAND_CURSOR));
             this.addActionListener(this);

@@ -81,7 +81,7 @@ public abstract class CArrowButton extends CButton implements ActionListener {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         Shape arrow = this.getShape(this.dir);
         if (focus) {
-            g2.setColor(Color.gray);
+            g2.setColor(Color.black);
             g2.drawRoundRect(0, 0, w - 1, h - 1, 2 * m, 2 * m);
         }
         if (pressed) {
