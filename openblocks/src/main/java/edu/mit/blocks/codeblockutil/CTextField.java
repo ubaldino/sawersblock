@@ -31,7 +31,7 @@ public class CTextField extends JFormattedTextField implements MouseListener, Mo
     public CTextField(Format format) {
         super(format);
         this.setBorder(null);
-        this.setFont(new Font("Roboto", Font.PLAIN, 13));
+        this.setFont(new Font("Ariel", Font.PLAIN, 13));
 
         this.setOpaque(false);
         this.addMouseListener(this);
@@ -43,7 +43,7 @@ public class CTextField extends JFormattedTextField implements MouseListener, Mo
     public CTextField(String text) {
         super(text);
         this.setBorder(null);
-        this.setFont(new Font("Roboto", Font.PLAIN, 13));
+        this.setFont(new Font("Ariel", Font.PLAIN, 13));
 
         this.setOpaque(false);
         this.addMouseListener(this);

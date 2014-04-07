@@ -171,7 +171,7 @@ public class PopupExplorer extends JLayeredPane implements Explorer, ComponentLi
             this.addMouseListener(this);
             this.addMouseMotionListener(this);
             this.timer = new EnlargerTimer();
-            this.setFont(new Font("Roboto", Font.BOLD, 13));
+            this.setFont(new Font("Ariel", Font.BOLD, 13));
         }
 
         protected void paintComponent(Graphics g) {

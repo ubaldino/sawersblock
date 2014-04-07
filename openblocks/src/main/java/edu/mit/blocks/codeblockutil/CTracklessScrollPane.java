@@ -388,7 +388,7 @@ class VerticalBar extends JPanel implements MouseListener, MouseMotionListener, 
         } else {
             g2.translate(0, this.getHeight() - 0.5f * this.getWidth());
         }
-        g2.setColor(Color.black);
+        g2.setColor(Color.lightGray);
         g2.setPaint(new GradientPaint(0, 0, thumbColor, this.getWidth() + 10, 0, Color.black, true));
         g2.fill(reformThumbShape(this.getWidth(), this.getHeight(), (int) viewExtent));
     }
@@ -571,7 +571,7 @@ class HorizontalBar extends JPanel implements MouseListener, MouseMotionListener
         } else {
             g2.translate(this.getWidth() - 0.5f * this.getHeight(), 0);
         }
-        g2.setColor(Color.black);
+        g2.setColor(Color.lightGray);
         g2.setPaint(new GradientPaint(0, 0, thumbColor, 0, this.getHeight() + 10, Color.black, true));
         g2.fill(reformThumbShape(this.getWidth(), this.getHeight(), (int) viewExtent));
     }

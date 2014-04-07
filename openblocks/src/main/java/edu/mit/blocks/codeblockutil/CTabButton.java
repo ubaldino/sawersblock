@@ -43,7 +43,7 @@ public class CTabButton extends CButton {
         // Paint the first layer
         g2.setPaint(new GradientPaint(0, 0, topColoring, 0, buttonHeight, bottomColoring, false));
         g2.fillRoundRect(INSET, INSET, buttonWidth, buttonHeight + arc, arc, arc);
-        g2.setColor(Color.BLACK);
+        g2.setColor(Color.darkGray);
         g2.drawRoundRect(INSET, INSET, buttonWidth, buttonHeight + arc, arc, arc);
 
         // set up paint data fields for second layer
@@ -54,7 +54,7 @@ public class CTabButton extends CButton {
             bottomColoring = this.selectedColor;
         } else {
             topColoring = Color.gray;
-            bottomColoring = Color.BLACK;
+            bottomColoring = Color.darkGray;
         }
         // Paint the second layer
         g2.setPaint(new GradientPaint(0, 0, topColoring, 0, buttonHeight, bottomColoring, false));
@@ -68,10 +68,10 @@ public class CTabButton extends CButton {
         if (this.getText() != null) {
             if (this.selected) {
                 g2.setColor(Color.white);
-                font = new Font("Roboto", Font.BOLD, buttonHeight * 2 / 3);
+                font = new Font("Ariel", Font.BOLD, buttonHeight * 2 / 3);
             } else {
                 g2.setColor(Color.white);
-                font = new Font("Roboto", Font.PLAIN, buttonHeight * 2 / 3);
+                font = new Font("Ariel", Font.PLAIN, buttonHeight * 2 / 3);
                 //font = g2.getFont().deriveFont((float)(((float)buttonHeight) * .4));
             }
             g2.setFont(font);

@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import javax.swing.ImageIcon;
 
 import org.w3c.dom.Element;
@@ -464,28 +465,20 @@ public class BlockGenus {
         eGroup.add(new BlockConnector(socket));
     }
 
-    /**
-     * Modified to translate the ToolTip (removed, modified by HE Qichen, see blow)
-	 *  ldgneto@gmail.com 
-	 * */
-    /**
-     * Modified by HE Qichen, remove additional code for rendering block description, please check code in WorkspaceController.java
-     * 
-     */
     private static void loadGenusDescription(NodeList descriptions, BlockGenus genus) {
-		Node description;
-		for (int k = 0; k < descriptions.getLength(); k++) {
-			description = descriptions.item(k);
-			if (description.getNodeName().equals("text")) {
-				genus.blockDescription = description.getTextContent();
-			} else if (description.getNodeName().equals("arg-description")) {
-				String argumentDescription = description.getTextContent();
-				if (argumentDescription != null) {
-					genus.argumentDescriptions.add(argumentDescription);
-				}
-			}
-		}
-	}
+        Node description;
+        for (int k = 0; k < descriptions.getLength(); k++) {
+            description = descriptions.item(k);
+            if (description.getNodeName().equals("text")) {
+                genus.blockDescription = description.getTextContent();
+            } else if (description.getNodeName().equals("arg-description")) {
+                String argumentDescription = description.getTextContent();
+                if (argumentDescription != null) {
+                    genus.argumentDescriptions.add(argumentDescription);
+                }
+            }
+        }
+    }
 
     /**
      * Loads the BlockConnector information of the specified genus

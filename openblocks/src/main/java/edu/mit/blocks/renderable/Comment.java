@@ -86,7 +86,7 @@ public class Comment extends JPanel {
     private int width = DEFAULT_WIDTH;
     private int height = DEFAULT_HEIGHT;
     private double zoom = 1.0;
-    private String fontname = "Monospaced";
+    private String fontname = "Roboto";
     private Shape body, resize, textarea;
     private boolean pressed = false;
     private boolean active = false;
@@ -391,7 +391,7 @@ public class Comment extends JPanel {
             } else if (commentChild.getNodeName().equals("Collapsed")) {
                 commentCollapsed = true;
             } else {
-                // System.out.println("Uknown Comment Node: " + commentChild.getNodeName());
+                System.out.println("Uknown Comment Node: " + commentChild.getNodeName());
             }
         }
 

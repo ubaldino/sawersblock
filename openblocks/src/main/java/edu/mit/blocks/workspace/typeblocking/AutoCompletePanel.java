@@ -66,7 +66,7 @@ public class AutoCompletePanel extends JPanel implements MouseListener, MouseMot
     public AutoCompletePanel(Workspace workspace) {
         super(new BorderLayout());
         this.workspace = workspace;
-        font = new Font("Roboto", Font.BOLD, 12);
+        font = new Font("Ariel", Font.BOLD, 12);
 
         //set up editor (text field)
         editor = new JTextField();

@@ -98,7 +98,7 @@ public class Page implements WorkspaceWidget, SearchableContainer, ISupportMemen
     /** The default abstract width */
     private static final int DEFAULT_ABSTRACT_WIDTH = 700;
     /** The default abstract height */
-    public static final int DEFAULT_ABSTRACT_HEIGHT = 8000;
+    public static final int DEFAULT_ABSTRACT_HEIGHT = 1600;
     /** An empty string */
     private static final String emptyString = "";
     /** this.zoomLevel: zoom level state */
@@ -126,9 +126,6 @@ public class Page implements WorkspaceWidget, SearchableContainer, ISupportMemen
     private String pageId = null;
     /** Toggles to show/hide minimize page button. */
     private boolean hideMinimize = false;
-    
-    /** Standard background color of the UI **/
-    public static Color backgroundColor = new Color(160, 160, 160);
     //////////////////////////////
     //Constructor/ Destructor	//
     //////////////////////////////
@@ -464,7 +461,7 @@ public class Page implements WorkspaceWidget, SearchableContainer, ISupportMemen
                     0,
                     (int) (this.abstractWidth * zoom),
                     (int) (this.abstractHeight * zoom));
-            this.getJComponent().setFont(new Font("Roboto", Font.PLAIN, (int) (12 * zoom)));
+            this.getJComponent().setFont(new Font("Ariel", Font.PLAIN, (int) (12 * zoom)));
             return (int) (this.abstractWidth * zoom);
         } else {
             this.getJComponent().setBounds(
@@ -472,7 +469,7 @@ public class Page implements WorkspaceWidget, SearchableContainer, ISupportMemen
                     0,
                     COLLAPSED_WIDTH + 2,
                     (int) (this.abstractHeight * zoom));
-            this.getJComponent().setFont(new Font("Roboto", Font.PLAIN, (int) (12 * zoom)));
+            this.getJComponent().setFont(new Font("Ariel", Font.PLAIN, (int) (12 * zoom)));
             return COLLAPSED_WIDTH + 2;
         }
 
@@ -987,7 +984,7 @@ public class Page implements WorkspaceWidget, SearchableContainer, ISupportMemen
                 for (int i = 0; i < shadowPositionArray.length; i++) {
                     int dx = shadowPositionArray[i][0];
                     int dy = shadowPositionArray[i][1];
-                    g2.setColor(new Color(0.5f, 0.5f, 0.5f, shadowColorArray[i]));
+                    g2.setColor(new Color(0, 0, 0, shadowColorArray[i]));
                     g2.drawString(c, x + (int) ((dx) * offsetSize), y + (int) ((dy) * offsetSize));
                 }
                 g2.setColor(col);
@@ -1034,7 +1031,7 @@ public class Page implements WorkspaceWidget, SearchableContainer, ISupportMemen
                 }
             } else {
                 if (fullview) {
-                    paintFull(g, Color.BLACK);
+                    paintFull(g, Color.gray);
                 } else {
                     paintCollapsed(g, Color.gray);
                 }
@@ -1142,7 +1139,7 @@ class PageJComponent extends JLayeredPane implements RBParent {
         super.paintComponent(g);
         //set label color
         if (this.getBackground().getBlue() + this.getBackground().getGreen() + this.getBackground().getRed() > 400) {
-            g.setColor(Color.BLACK);
+            g.setColor(Color.DARK_GRAY);
         } else {
             g.setColor(Color.LIGHT_GRAY);
         }

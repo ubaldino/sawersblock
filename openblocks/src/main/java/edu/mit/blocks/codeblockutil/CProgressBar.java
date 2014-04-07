@@ -29,7 +29,7 @@ public class CProgressBar extends JFrame implements ActionListener {
         JPanel pane = new JPanel(new BorderLayout());
         pane.setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, Color.blue));
         JLabel label = new JLabel(text, SwingConstants.CENTER);
-        label.setFont(new Font("Roboto", Font.BOLD, 12));
+        label.setFont(new Font("Ariel", Font.BOLD, 12));
         pane.add(label, BorderLayout.NORTH);
         bar = new JProgressBar(0, 100);
         //bar.setStringPainted(true);

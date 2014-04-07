@@ -437,6 +437,8 @@ public class BlockConnector implements ISupportMemento {
     private class BlockConnectorState {
 
         public String kind;
+        @SuppressWarnings("unused")
+		public String initKind;
         public PositionType positionType;
         public String label;
         public Long connBlockID = Block.NULL;
@@ -454,6 +456,7 @@ public class BlockConnector implements ISupportMemento {
         BlockConnectorState state = new BlockConnectorState();
 
         state.kind = this.getKind();
+        state.initKind = this.initKind;
         state.positionType = this.getPositionType();
         state.label = this.getLabel();
         state.connBlockID = this.getBlockID();

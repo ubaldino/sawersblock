@@ -369,7 +369,7 @@ public class CSlider extends JPanel implements MouseListener, MouseMotionListene
 
         // draws the tick marks if ticks are turned on
         // also draws where the triangle where thumb starts
-        g2.setColor(Color.black);
+        g2.setColor(Color.lightGray);
         if (this.tickNumber != 0 && this.setTicks) {
             Shape ticks = this.reformTicks(blueprint);
             g2.draw(ticks);
@@ -379,7 +379,7 @@ public class CSlider extends JPanel implements MouseListener, MouseMotionListene
         // depending on what the start mark was set as when initialized
         if (this.startMark) {
             g2.setColor(Color.white);
-            Font font = new Font("Monospaced", Font.PLAIN, 8);
+            Font font = new Font("Dialog", Font.PLAIN, 8);
             FontMetrics metrics = getFontMetrics(font);
             // gets the width of the text so that the words can be centered later on
             int textWidth = metrics.stringWidth(startMarkLabel);
