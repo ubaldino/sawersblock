@@ -16,14 +16,14 @@ public class StopBlock extends TranslatorBlock {
   public String toCode() throws SocketNullException, SubroutineNotDeclaredException {
     //SawersBotUtil.setupEnv(translator);
     translator.addHeaderFile("Servo.h");
+    translator.addDefinitionCommand("Servo servo_pin_8;");
     translator.addDefinitionCommand("Servo servo_pin_9;");
-    translator.addDefinitionCommand("Servo servo_pin_10;");
     
-    translator.addSetupCommand("servo_pin_9.attach( 9 );\nservo_pin_10.attach( 10 );");
+    translator.addSetupCommand("servo_pin_8.attach( 8 );\nservo_pin_9.attach( 9 );");
     
     TranslatorBlock tb = this.getRequiredTranslatorBlockAtSocket( 0 );
     
-    String secuencia = "servo_pin_9.write( 90 );\nservo_pin_10.write( 90 );\n"+"delay( "+tb.toCode()+" );";
+    String secuencia = "servo_pin_8.write( 90 );\nservo_pin_9.write( 90 );\n"+"delay( "+tb.toCode()+" );";
     return codePrefix + secuencia + codeSuffix+"\n";
   }
 

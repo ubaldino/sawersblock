@@ -16,8 +16,8 @@ public class PinzaBlock extends TranslatorBlock {
   public String toCode() throws SocketNullException, SubroutineNotDeclaredException {
     //SawersBotUtil.setupEnv(translator);
     translator.addHeaderFile("Servo.h");
-    translator.addDefinitionCommand("Servo servo_pin_11;");
-    translator.addSetupCommand("servo_pin_11.attach( 11 );");
+    translator.addDefinitionCommand("Servo servo_pin_6;");
+    translator.addSetupCommand("servo_pin_6.attach( 6 );");
     
     TranslatorBlock tb =  this.getRequiredTranslatorBlockAtSocket( 1 ) ;
     int valor_porcentual =  Integer.parseInt( tb.toCode() );
@@ -30,7 +30,7 @@ public class PinzaBlock extends TranslatorBlock {
       paso = ( 90 * ( valor_porcentual / (float)100  ) ) ;
     else
       paso = ( 90 - ( 90 * ( valor_porcentual / (float)100  ) ) ) ;
-    String secuencia = "servo_pin_11.write( " + (int)Math.round( paso ) + " );";
+    String secuencia = "servo_pin_6.write( " + (int)Math.round( paso ) + " );";
     return codePrefix + secuencia + codeSuffix + "\n";
   }
 
