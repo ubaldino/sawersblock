@@ -34,7 +34,7 @@ public class CQueryField extends JPanel implements MouseListener, MouseMotionLis
         super(new BorderLayout());
         field = new JTextField(text);
         field.setBorder(null);
-        field.setFont(new Font("Ariel", Font.PLAIN, 13));
+        field.setFont(new Font("Roboto", Font.PLAIN, 13));
 
         this.setBounds(0, 0, 200, 20);
         this.setPreferredSize(new Dimension(200, 20));

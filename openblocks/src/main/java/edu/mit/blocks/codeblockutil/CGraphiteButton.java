@@ -21,7 +21,7 @@ public class CGraphiteButton extends CButton {
     private static final long serialVersionUID = 328149080221L;
 
     public CGraphiteButton(String text) {
-        super(Color.black, CGraphite.blue, text);
+        super(Color.black, CGraphite.white, text);
     }
 
     /**
@@ -51,7 +51,7 @@ public class CGraphiteButton extends CButton {
         } else {
             if (this.focus) {
                 topColoring = this.buttonColor;
-                bottomColoring = Color.darkGray;
+                bottomColoring = Color.black;
             } else {
                 topColoring = this.buttonColor;
                 bottomColoring = this.buttonColor;
@@ -60,7 +60,7 @@ public class CGraphiteButton extends CButton {
         // Paint the first layer
         g2.setPaint(new GradientPaint(0, 0, topColoring, 0, buttonHeight, bottomColoring, false));
         g2.fillRoundRect(INSET, INSET, buttonWidth, buttonHeight, arc, arc);
-        g2.setColor(Color.darkGray);
+        g2.setColor(Color.black);
         g2.drawRoundRect(INSET, INSET, buttonWidth, buttonHeight, arc, arc);
 
         // set up paint data fields for second layer
@@ -77,10 +77,10 @@ public class CGraphiteButton extends CButton {
         } else {
             if (this.focus) {
                 topColoring = Color.white;
-                bottomColoring = Color.darkGray;
+                bottomColoring = Color.black;
             } else {
                 topColoring = Color.gray;
-                bottomColoring = Color.darkGray;
+                bottomColoring = Color.black;
             }
         }
         // Paint the second layer

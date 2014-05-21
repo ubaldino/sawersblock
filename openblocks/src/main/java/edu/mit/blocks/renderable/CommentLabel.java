@@ -69,7 +69,7 @@ public class CommentLabel extends BlockControlLabel {
                 this.setForeground(new Color(255, 255, 0));
             } else {
                 setText("?");
-                this.setForeground(Color.lightGray);
+                this.setForeground(Color.white);
             }
             rb.setComponentZOrder(this, 0);
         }

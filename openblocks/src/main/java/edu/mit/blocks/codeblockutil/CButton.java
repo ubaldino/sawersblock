@@ -70,7 +70,7 @@ public class CButton extends JButton implements MouseListener {
      * @param text
      */
     public CButton(String text) {
-        this(new Color(30, 30, 30), Color.gray, text);
+        this(new Color(30, 30, 30), Color.black, text);
     }
 
     /**
@@ -171,7 +171,7 @@ public class CButton extends JButton implements MouseListener {
 
         // Paint the first layer
         gb.fillRoundRect(INSET, INSET, buttonWidth, buttonHeight, arc, arc);
-        gb.setColor(Color.darkGray);
+        gb.setColor(Color.yellow);
         gb.drawRoundRect(INSET, INSET, buttonWidth, buttonHeight, arc, arc);
 
         // set up paint data fields for second layer

@@ -15,7 +15,7 @@ public class GlueSNBlock extends TranslatorBlock
 	public String toCode() throws SocketNullException, SubroutineNotDeclaredException
 	{
 		String ret = "";
-		TranslatorBlock translatorBlock = this.getTranslatorBlockAtSocket(0, codePrefix, codeSuffix);
+		TranslatorBlock translatorBlock = this.getTranslatorBlockAtSocket( 0 , codePrefix, codeSuffix );
 		if (translatorBlock != null)
 		{
 			ret = translatorBlock.toCode();

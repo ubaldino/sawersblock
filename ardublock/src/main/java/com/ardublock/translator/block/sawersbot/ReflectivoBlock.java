@@ -14,14 +14,26 @@ public class ReflectivoBlock extends TranslatorBlock {
   @Override
   public String toCode() throws SocketNullException, SubroutineNotDeclaredException {
 
-    translator.addDefinitionCommand("int reflectivo[] = new int( 5 ) ;") ;
+    SawersBotUtil.setupWire( translator );
     
-    translator.addSetupCommand("pinMode ( led , OUTPUT ) ;");
-    
+    translator.addDefinitionCommand("int getSensorState( int pos )\n" +
+                                    "{\n" +
+                                    "    byte sensL[4];\n" +
+                                    "    int c;\n" +
+                                    "    int count=0;\n" +
+                                    "    Wire.requestFrom( 3 , 4 );\n" +
+                                    "    while( Wire.available() )\n" +
+                                    "    {\n" +
+                                    "        c = Wire.read();\n" +
+                                    "        sensL[ count ]=c;\n" +
+                                    "        count++;\n" +
+                                    "    }\n" +
+                                    "    return( sensL[ pos ] );\n" +
+                                    "}" );
     
     TranslatorBlock tb = this.getRequiredTranslatorBlockAtSocket( 0 );
     //secuencia = String.format( secuencia , tb.toCode() , tb.toCode() ) ;
     
-    return "A"+ ( Integer.parseInt( tb.toCode() )-1 );
+    return  codePrefix + " getSensorState( " +( Integer.parseInt( tb.toCode() )-1 ) + " ) "  + codeSuffix;
   }
 }

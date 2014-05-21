@@ -4,14 +4,16 @@ import com.ardublock.translator.Translator;
 
 public class SawersBotUtil {
 
-  public static void setupEnv(Translator translator) {
-    
-    translator.addHeaderFile("Servo.h");
-    translator.addHeaderFile("Ultrasonic.h");
-    
-    translator.addDefinitionCommand( "Ultrasonic ultrasonic( 5 , 12 );" );
-    translator.addDefinitionCommand( "int angmax= 180;" );
-    translator.addDefinitionCommand( "int angmin= 0;" );
+  public static void setupWire(Translator translator) {
+    translator.addHeaderFile( "Wire.h" );
+    translator.addSetupCommand( "Wire.begin();" );
+  }
+  public static void setupSerial(Translator translator) {
+    translator.addSetupCommand( "Serial.begin( 9600 );" );
+  }
+  
+  public static void setupSerial1(Translator translator) {
+    translator.addSetupCommand( "Serial1.begin( 9600 );" );
   }
 
 }

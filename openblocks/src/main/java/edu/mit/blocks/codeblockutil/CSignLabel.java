@@ -36,7 +36,7 @@ public class CSignLabel extends JPanel {
         super();
         this.charSet = new String[0];
         this.setOpaque(false);
-        this.setFont(new Font("Ariel", Font.BOLD, FONT_SIZE));
+        this.setFont(new Font("Roboto", Font.BOLD, FONT_SIZE));
     }
 
     public void setText(String text) {

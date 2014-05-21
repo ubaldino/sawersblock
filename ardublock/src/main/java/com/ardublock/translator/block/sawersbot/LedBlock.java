@@ -17,12 +17,12 @@ public class LedBlock extends TranslatorBlock {
     translator.addDefinitionCommand("int led = 13 ;") ;
     translator.addSetupCommand("pinMode ( led , OUTPUT ) ;");
     
-    String secuencia = "digitalWrite( led , HIGH ); \n delay( %s );"
-            + " \n digitalWrite( led , LOW ); \n delay( %s );";
-    
     TranslatorBlock tb = this.getRequiredTranslatorBlockAtSocket( 0 );
-    secuencia = String.format( secuencia , tb.toCode() , tb.toCode() ) ;
     
+    String valor = ( tb.toCode().equals( "LOW" ) )? "LOW" : "HIGH" ;
+    String secuencia = "digitalWrite( led ,%s );";
+
+    secuencia = String.format( secuencia , valor ) ;
     return secuencia;
   }
 }

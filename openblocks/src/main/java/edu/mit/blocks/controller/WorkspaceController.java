@@ -13,6 +13,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 import java.util.List;
 
@@ -212,6 +213,25 @@ public class WorkspaceController {
         		if (altName != null) {
         			elm.setAttribute("initlabel", altName);
         		}
+				NodeList descriptions = elm.getElementsByTagName("description");
+				Element description = (Element)descriptions.item(0);
+				if (description != null) {
+					NodeList texts = description.getElementsByTagName("text");
+					Element text = (Element)texts.item(0);
+					if (text != null) {
+						altName = langResourceBundle.getString("bg." + name + ".description");
+						if (altName != null) {
+							text.setTextContent(altName);
+						}
+					}
+				}
+				
+				NodeList arg_descs = elm.getElementsByTagName("arg-description");
+				for (int j = 0 ; j < arg_descs.getLength(); j++) {
+					Element arg_desc = (Element)arg_descs.item(j);
+					String arg_name = arg_desc.getAttribute("name");
+					// System.out.println("bg." + name + ".arg_desc." + arg_name);
+	        	}
         	}
         	nodes = doc.getElementsByTagName("BlockDrawer");
         	for (int i = 0 ; i < nodes.getLength(); i++) {

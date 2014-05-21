@@ -14,10 +14,21 @@ public class UltrasonicoBlock extends TranslatorBlock {
 
   @Override
   public String toCode() throws SocketNullException, SubroutineNotDeclaredException {
-    //SawersBotUtil.setupEnv(translator);
-    translator.addHeaderFile("Ultrasonic.h");
-    translator.addDefinitionCommand("Ultrasonic ultrasonic( 5 , 12 );");
-    return "ultrasonic.Ranging( CM )";
-  }
+    SawersBotUtil.setupWire( translator );
 
+    translator.addDefinitionCommand("int readDistance()\n" +
+                                    "{\n" +
+                                    "    int c;\n" +
+                                    "    Wire.requestFrom( 2 , 1 );\n" +
+                                    "\n" +
+                                    "    while( Wire.available() )\n" +
+                                    "    { \n" +
+                                    "        c = Wire.read();\n" +
+                                    "    }\n" +
+                                    "    return c;\n" +
+                                    "}" );
+    
+    return codePrefix + " readDistance() " + codeSuffix ;
+  }
+  
 }

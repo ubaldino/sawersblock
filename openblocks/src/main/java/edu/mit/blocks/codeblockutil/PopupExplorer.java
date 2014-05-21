@@ -49,8 +49,8 @@ public class PopupExplorer extends JLayeredPane implements Explorer, ComponentLi
         super();
         this.components = new ArrayList<Canvas>();
         this.setLayout(null);
-        this.setOpaque(true);
-        this.setBackground(Color.black);
+        this.setOpaque(false);
+        this.setBackground(Color.white);
 
         this.viewport = new JPanel(new BorderLayout());
         scroll = new CHoverScrollPane(
@@ -171,7 +171,7 @@ public class PopupExplorer extends JLayeredPane implements Explorer, ComponentLi
             this.addMouseListener(this);
             this.addMouseMotionListener(this);
             this.timer = new EnlargerTimer();
-            this.setFont(new Font("Ariel", Font.BOLD, 13));
+            this.setFont(new Font("Roboto", Font.BOLD, 13));
         }
 
         protected void paintComponent(Graphics g) {

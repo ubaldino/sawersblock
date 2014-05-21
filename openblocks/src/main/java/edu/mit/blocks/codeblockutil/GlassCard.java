@@ -172,7 +172,7 @@ public class GlassCard implements ActionListener, PropertyChangeListener {
                 // Paint the first layer
                 gb.setColor(canvas.getColor().darker());
                 gb.fillRoundRect(INSET, INSET, buttonWidth, buttonHeight, arc, arc);
-                gb.setColor(Color.darkGray);
+                gb.setColor(Color.black);
                 gb.drawRoundRect(INSET, INSET, buttonWidth, buttonHeight, arc, arc);
 
                 // set up paint data fields for second layer
@@ -210,7 +210,7 @@ public class GlassCard implements ActionListener, PropertyChangeListener {
                 for (int i = 0; i < shadowPositionArray.length; i++) {
                     int dx = shadowPositionArray[i][0];
                     int dy = shadowPositionArray[i][1];
-                    g2.setColor(new Color(0, 0, 0, shadowColorArray[i]));
+                    g2.setColor(new Color(0.5f, 0.5f, 0.5f, shadowColorArray[i]));
                     g2.drawString(text, x + (int) ((dx) * offsetSize), y + (int) ((dy) * offsetSize));
                 }
                 if (canvas.getHighlight() != null) {

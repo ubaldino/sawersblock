@@ -133,8 +133,8 @@ public class Workspace extends JLayeredPane implements ISupportMemento, RBParent
     public Workspace() {
         super();
         setLayout(null);
-        setBackground(Color.WHITE);
-        setPreferredSize(new Dimension(1000, 600));
+        setBackground(Color.black);
+        setPreferredSize(new Dimension(10000, 800));
 
         this.factory = new FactoryManager(this);
         this.addWorkspaceListener(this.factory);
@@ -154,8 +154,7 @@ public class Workspace extends JLayeredPane implements ISupportMemento, RBParent
             }
         });
 
-        blockCanvasLayer = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, true,
-                factory.getJComponent(), blockCanvas.getJComponent());
+		blockCanvasLayer = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, true, factory.getJComponent(), blockCanvas.getJComponent());
         blockCanvasLayer.setOneTouchExpandable(true);
         blockCanvasLayer.setDividerSize(6);
         add(blockCanvasLayer, BLOCK_LAYER);

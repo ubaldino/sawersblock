@@ -18,7 +18,7 @@ public class CColorChooser extends CButton implements MouseListener, MouseMotion
     private Color previousColor = null;
 
     public CColorChooser(Color color) {
-        super(color, Color.gray, "RGB = 0,0,0");
+        super(color, Color.black, "RGB = 0,0,0");
         popup = new ColorPicker(color);
         popup.setPopupSize(200, 100);
         this.add(popup);

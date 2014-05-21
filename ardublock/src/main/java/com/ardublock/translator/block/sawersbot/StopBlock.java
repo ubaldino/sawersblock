@@ -21,9 +21,7 @@ public class StopBlock extends TranslatorBlock {
     
     translator.addSetupCommand("servo_pin_8.attach( 8 );\nservo_pin_9.attach( 9 );");
     
-    TranslatorBlock tb = this.getRequiredTranslatorBlockAtSocket( 0 );
-    
-    String secuencia = "servo_pin_8.write( 90 );\nservo_pin_9.write( 90 );\n"+"delay( "+tb.toCode()+" );";
+    String secuencia = "servo_pin_8.write( 90 );\nservo_pin_9.write( 90 );\nservo_pin_8.detach();\nservo_pin_9.detach();\n";
     return codePrefix + secuencia + codeSuffix+"\n";
   }
 

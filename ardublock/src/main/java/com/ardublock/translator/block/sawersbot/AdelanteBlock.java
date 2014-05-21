@@ -30,9 +30,8 @@ public class AdelanteBlock extends TranslatorBlock {
     
     //   0   ->  90
     //   90  ->  0
-	tb = this.getRequiredTranslatorBlockAtSocket( 1 );
-    
-    String secuencia = "servo_pin_8.write( "+( 90 + velocity )+" );\nservo_pin_9.write( "+( 90 - velocity )+" );\n"+"delay( "+tb.toCode()+" );";
+	String secuencia = "servo_pin_8.attach( 8 );\nservo_pin_9.attach( 9 );";
+    secuencia += "servo_pin_8.write( "+( 90 + velocity )+" );\nservo_pin_9.write( "+( 90 - velocity )+" );\n";
     
     
     return codePrefix + secuencia + codeSuffix+"\n";

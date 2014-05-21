@@ -70,9 +70,9 @@ public class GlassExplorer extends JPanel implements Explorer, FocusListener {
         this.timer = new EnlargerTimer();
         this.listeners = new ArrayList<ExplorerListener>();
         retardedPane = new JPanel();
-        retardedPane.setBackground(Color.black);
+        retardedPane.setBackground(edu.mit.blocks.workspace.Page.backgroundColor);
         buttonPane = new JPanel();
-        buttonPane.setBackground(Color.black);
+        buttonPane.setBackground(edu.mit.blocks.workspace.Page.backgroundColor);
         buttonPane.setLayout(new GridLayout(0, 1));
         canvasPane = new CanvasPane();
         canvasPane.setOpaque(false);

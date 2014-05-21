@@ -44,7 +44,7 @@ public class CBorderlessButton extends CButton {
             // Paint the first layer
             g2.setPaint(new GradientPaint(0, 0, topColoring, 0, buttonHeight, bottomColoring, false));
             g2.fillRoundRect(INSET, INSET, buttonWidth, buttonHeight, arc, arc);
-            g2.setColor(Color.darkGray);
+            g2.setColor(Color.BLACK);
             g2.drawRoundRect(INSET, INSET, buttonWidth, buttonHeight, arc, arc);
 
             // set up paint data fields for second layer
@@ -55,7 +55,7 @@ public class CBorderlessButton extends CButton {
                 bottomColoring = this.selectedColor;
             } else {
                 topColoring = Color.white;
-                bottomColoring = Color.darkGray;
+                bottomColoring = Color.BLACK;
             }
             // Paint the second layer
             g2.setPaint(new GradientPaint(0, 0, topColoring, 0, buttonHeight, bottomColoring, false));

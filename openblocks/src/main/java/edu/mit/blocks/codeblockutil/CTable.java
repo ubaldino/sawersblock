@@ -28,7 +28,7 @@ public class CTable extends JPanel {
     private static final int COLUMN_WIDTH = 50;
     private static final int ROW_HEIGHT = 15;
     private static final Color foreground = Color.white;
-    private static final Font font = new Font("Ariel", Font.BOLD, 12);
+    private static final Font font = new Font("Roboto", Font.BOLD, 12);
     private final List<double[]> data;
     private final JComponent view;
     private final JComponent scroll;

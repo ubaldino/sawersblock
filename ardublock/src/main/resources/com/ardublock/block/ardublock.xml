@@ -4599,7 +4599,7 @@
 			</Images>
 		</BlockGenus>
         
-        <!-- Section for SawesBot -->
+        <!-- Section for SawersBot -->
         <BlockGenus name="sawersbot_adelante" kind="command" color="55 118 248" initlabel="bg.sawersbot_adelante">
 			<description>
 				<text>Adelante</text>
@@ -4612,12 +4612,8 @@
 			</Images>
             <BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.velocidad">
-					<DefaultArg genus-name="number" label="0" />
+					<DefaultArg genus-name="number" label="30" />
 				</BlockConnector>
-				<BlockConnector connector-type="number" connector-kind="socket" label="bc.tiempo">
-					<DefaultArg genus-name="number" label="2000" />
-				</BlockConnector>
-                
             </BlockConnectors>
 		</BlockGenus>
         <BlockGenus name="sawersbot_atras" kind="command" color="55 118 248" initlabel="bg.sawersbot_atras">
@@ -4631,10 +4627,7 @@
 			</Images>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.velocidad">
-					<DefaultArg genus-name="number" label="0" />
-				</BlockConnector>
-                <BlockConnector connector-type="number" connector-kind="socket" label="bc.tiempo">
-					<DefaultArg genus-name="number" label="2000" />
+					<DefaultArg genus-name="number" label="30" />
 				</BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
@@ -4649,10 +4642,7 @@
 			</Images>
             <BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.velocidad">
-					<DefaultArg genus-name="number" label="0" />
-				</BlockConnector>
-                <BlockConnector connector-type="number" connector-kind="socket" label="bc.tiempo">
-					<DefaultArg genus-name="number" label="2000" />
+					<DefaultArg genus-name="number" label="30" />
 				</BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
@@ -4667,10 +4657,7 @@
 			</Images>
             <BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.velocidad">
-					<DefaultArg genus-name="number" label="0" />
-				</BlockConnector>
-                <BlockConnector connector-type="number" connector-kind="socket" label="bc.tiempo">
-					<DefaultArg genus-name="number" label="2000" />
+					<DefaultArg genus-name="number" label="30" />
 				</BlockConnector>
             </BlockConnectors>
 		</BlockGenus>
@@ -4683,11 +4670,6 @@
 					<FileLocation>com/ardublock/block/workshop/stop.png</FileLocation>
 				</Image>
 			</Images>
-            <BlockConnectors>
-                <BlockConnector connector-type="number" connector-kind="socket" label="bc.tiempo">
-					<DefaultArg genus-name="number" label="2000" />
-				</BlockConnector>
-            </BlockConnectors>
 		</BlockGenus>
         
         
@@ -4715,10 +4697,10 @@
 			<description>
 				<text>Sensor refectivo cny70</text>
 			</description>
-			<BlockConnectors>
-              <BlockConnector connector-type="number" connector-kind="socket" label="bc.velocidad">
-                <DefaultArg genus-name="number" label="1000" />
-              </BlockConnector>
+            <BlockConnectors>
+                <BlockConnector connector-type="boolean" connector-kind="socket">
+					<DefaultArg genus-name="digital-high" label="ALTO" />
+				</BlockConnector>
 			</BlockConnectors>
 			<Images>
 				<Image>
@@ -4763,6 +4745,48 @@
 				</BlockConnector>
             </BlockConnectors>
 		</BlockGenus>
+        <BlockGenus name="sawersbot_cny_3" kind="data" color="55 118 248" initlabel="bg.sawersbot_cny_3" editable-label="no">
+			<description>
+				<text>CNY 3</text>
+			</description>
+            <BlockConnectors>
+                <BlockConnector connector-type="number" connector-kind="plug" >
+					<DefaultArg genus-name="number" label="1" />
+				</BlockConnector>
+            </BlockConnectors>
+		</BlockGenus>
+        <BlockGenus name="sawersbot_cny_4" kind="data" color="55 118 248" initlabel="bg.sawersbot_cny_4" editable-label="no">
+			<description>
+				<text>CNY 4</text>
+			</description>
+            <BlockConnectors>
+                <BlockConnector connector-type="number" connector-kind="plug" >
+					<DefaultArg genus-name="number" label="1" />
+				</BlockConnector>
+            </BlockConnectors>
+		</BlockGenus>
+        
+        <BlockGenus name="sawersbot_si" kind="data" initlabel="bg.sawersbot_si" color="236 45 45" editable-label="no">
+			<description>
+				<text>
+					retorna , SI
+				</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-kind="plug" connector-type="boolean" position-type="mirror" />
+			</BlockConnectors>
+		</BlockGenus>
+
+		<BlockGenus name="sawersbot_no" kind="data" initlabel="bg.sawersbot_no" color="236 45 45">
+			<description>
+				<text>
+					retorna , NO
+				</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-kind="plug" connector-type="boolean" position-type="mirror" />
+			</BlockConnectors>
+		</BlockGenus>
         
         <BlockGenus name="sawersbot_pinza_abrir" kind="data" color="55 118 248" initlabel="bg.sawersbot_pinza_abrir" editable-label="no">
 			<description>
@@ -4788,19 +4812,101 @@
         
         <BlockGenus name="sawersbot_reflectivo" kind="data" color="55 118 248" initlabel="bg.sawersbot_reflectivo">
 			<description>
-				<text>Sensor refectivo cny70</text>
+				<text>Sensor reflectivo</text>
 			</description>
 			<BlockConnectors>
                 <BlockConnector connector-type="number" connector-kind="socket" label="bc.reflectivo">
-					<DefaultArg genus-name="sawersbot_cny_1" label="cny1" />
+					<DefaultArg genus-name="sawersbot_cny_1" label="A" />
 				</BlockConnector>
 				<BlockConnector connector-type="number" connector-kind="plug" />
 			</BlockConnectors>
 			<Images>
 				<Image>
-					<FileLocation>com/ardublock/block/workshop/cny.png</FileLocation>
+					<FileLocation>com/ardublock/block/workshop/sawerbot/ir_sensor.png</FileLocation>
 				</Image>
 			</Images>
+		</BlockGenus>
+        
+        
+        <BlockGenus name="sawersbot_bocina" kind="command" color="55 118 248" initlabel="bg.sawersbot_bocina">
+			<description>
+				<text>Genera una onda cuadrada de la frecuencia especificada en un pin.
+				</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.frequency">
+					<DefaultArg genus-name="number" label="440" />
+				</BlockConnector>
+			</BlockConnectors>
+            <Images>
+				<Image>
+					<FileLocation>com/ardublock/block/workshop/sawerbot/sonido.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
+        
+        <BlockGenus name="bluetooth_read_int" kind="data" color="55 118 248" initlabel="bg.serial_read_int">
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug" position-type="mirror" />
+			</BlockConnectors>
+            <Images>
+              <Image>
+                <FileLocation>com/ardublock/block/workshop/sawerbot/bt.png</FileLocation>
+              </Image>
+              </Images>
+		</BlockGenus>
+
+		<BlockGenus name="bluetooth_read_string" kind="data" color="55 118 248" initlabel="bg.serial_read_string">
+			<BlockConnectors>
+				<BlockConnector connector-type="poly" connector-kind="plug" position-type="mirror" />
+			</BlockConnectors>
+            <Images>
+              <Image>
+                <FileLocation>com/ardublock/block/workshop/sawerbot/bt.png</FileLocation>
+              </Image>
+              </Images>
+               
+		</BlockGenus>
+        
+        <BlockGenus name="bluetooth_print_string" kind="command" color="55 118 248" initlabel="bg.serial_print_string">
+			<description>
+				<text>Enviar texto por bluetooth</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="bc.message">
+					<DefaultArg genus-name="message" label="message" />
+				</BlockConnector>
+				<BlockConnector connector-type="boolean" connector-kind="socket" label="bc.ln">
+					<DefaultArg genus-name="sawersbot_si" label="si" />
+				</BlockConnector>
+			</BlockConnectors>
+            <Images>
+              <Image>
+                <FileLocation>com/ardublock/block/workshop/sawerbot/bt.png</FileLocation>
+              </Image>
+            </Images>
+		</BlockGenus>
+        
+        <BlockGenus name="bluetooth_disponible" kind="data" color="55 118 248" initlabel="bg.bluetooth_disponible">
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug" position-type="mirror" />
+			</BlockConnectors>
+            <Images>
+              <Image>
+                <FileLocation>com/ardublock/block/workshop/sawerbot/bt.png</FileLocation>
+              </Image>
+            </Images>
+		</BlockGenus>
+        
+        <BlockGenus name="pulsador_disponible" kind="data" color="55 118 248" initlabel="bg.pulsador_disponible">
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug" position-type="mirror" />
+			</BlockConnectors>
+            <Images>
+              <Image>
+                <FileLocation>com/ardublock/block/workshop/sawerbot/pulsador.png</FileLocation>
+              </Image>
+            </Images>
 		</BlockGenus>
         
         <!-- Fin saersbot  -->
@@ -4952,9 +5058,15 @@
         <BlockFamily>
 			<FamilyMember>sawersbot_cny_1</FamilyMember>
 			<FamilyMember>sawersbot_cny_2</FamilyMember>
+			<FamilyMember>sawersbot_cny_3</FamilyMember>
+			<FamilyMember>sawersbot_cny_4</FamilyMember>
 			<!--<FamilyMember>sawersbot_cny_3</FamilyMember>
 			<FamilyMember>sawersbot_cny_4</FamilyMember>
 			<FamilyMember>sawersbot_cny_5</FamilyMember>-->
+		</BlockFamily>
+        <BlockFamily>
+			<FamilyMember>sawersbot_si</FamilyMember>
+			<FamilyMember>sawersbot_no</FamilyMember>
 		</BlockFamily>
 	</BlockFamilies>
 
@@ -5263,8 +5375,15 @@
 			    <BlockGenusMember>sawersbot_derecha</BlockGenusMember>
 			    <BlockGenusMember>sawersbot_stop</BlockGenusMember>
 			    <BlockGenusMember>sawersbot_pinza</BlockGenusMember>
+			    <BlockGenusMember>sawersbot_reflectivo</BlockGenusMember>
 			    <BlockGenusMember>sawersbot_ultrasonico</BlockGenusMember>
-			    <!--<BlockGenusMember>sawersbot_reflectivo</BlockGenusMember>-->
+			    <BlockGenusMember>sawersbot_bocina</BlockGenusMember>
+			    <BlockGenusMember>bluetooth_read_int</BlockGenusMember>
+			    <BlockGenusMember>bluetooth_read_string</BlockGenusMember>
+			    <BlockGenusMember>bluetooth_print_string</BlockGenusMember>
+			    <BlockGenusMember>bluetooth_disponible</BlockGenusMember>
+			    <BlockGenusMember>pulsador_disponible</BlockGenusMember>
+                
 			    <!--<BlockGenusMember>sawersbot_pinza_abrir</BlockGenusMember>-->
 			</BlockDrawer>
 			

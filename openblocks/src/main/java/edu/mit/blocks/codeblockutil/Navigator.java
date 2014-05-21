@@ -98,7 +98,7 @@ final public class Navigator {
         explorers = new ArrayList<Explorer>();
         view = new JPanel();
         position = 0;
-        view.setBackground(Color.darkGray);
+        view.setBackground(Color.black);
         view.setLayout(null);
         this.scroll = new JScrollPane(view,
                 ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER,
@@ -342,7 +342,7 @@ final public class Navigator {
         private ExplorerSwitcher() {
             leftLabel = new JLabel("", SwingConstants.LEFT);
             leftLabel.setForeground(Color.white);
-            leftLabel.setFont(new Font("Arial", Font.PLAIN, LABEL_HEIGHT));
+            leftLabel.setFont(new Font("Roboto", Font.PLAIN, LABEL_HEIGHT));
             leftArrow = new CArrowButton(CArrowButton.Direction.WEST) {
                 private static final long serialVersionUID = 328149080296L;
                 @Override
@@ -354,7 +354,7 @@ final public class Navigator {
 
             rightLabel = new JLabel("", SwingConstants.RIGHT);
             rightLabel.setForeground(Color.white);
-            rightLabel.setFont(new Font("Arial", Font.PLAIN, LABEL_HEIGHT));
+            rightLabel.setFont(new Font("Roboto", Font.PLAIN, LABEL_HEIGHT));
             rightArrow = new CArrowButton(CArrowButton.Direction.EAST) {
                 private static final long serialVersionUID = 328149080297L;
                 @Override
@@ -365,7 +365,7 @@ final public class Navigator {
             rightArrow.setPreferredSize(ARROW_DIMENSION);
 
             mainLabel = new JLabel("", SwingConstants.CENTER);
-            mainLabel.setFont(new Font("Arial", Font.BOLD, 15));
+            mainLabel.setFont(new Font("Roboto", Font.BOLD, 15));
             mainLabel.setForeground(Color.white);
             mainLabel.setOpaque(false);
 
