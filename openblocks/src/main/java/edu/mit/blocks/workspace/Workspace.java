@@ -134,7 +134,7 @@ public class Workspace extends JLayeredPane implements ISupportMemento, RBParent
         super();
         setLayout(null);
         setBackground(Color.black);
-        setPreferredSize(new Dimension(10000, 800));
+        setPreferredSize(new Dimension(1000, 800));
 
         this.factory = new FactoryManager(this);
         this.addWorkspaceListener(this.factory);
