@@ -18,6 +18,7 @@ import javax.swing.SwingUtilities;
 
 import edu.mit.blocks.workspace.Workspace;
 import edu.mit.blocks.codeblockutil.GraphicsManager;
+import edu.mit.blocks.workspace.TrashCan;
 
 /**
  * This class can be used to add dragging capability to any JComponents.
@@ -105,6 +106,10 @@ public class JComponentDragHandler implements MouseListener, MouseMotionListener
         return Toolkit.getDefaultToolkit().createCustomCursor(buffImg, new Point(cpoint.x + 5, cpoint.y), cursorName);
 
     }
+
+  public JComponentDragHandler(TrashCan aThis) {
+    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  }
 
     /**
      * Returns the Cursor instance that is used when a mouse is over a draggable object

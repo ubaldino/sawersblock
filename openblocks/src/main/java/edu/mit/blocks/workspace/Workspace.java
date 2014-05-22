@@ -323,7 +323,7 @@ public class Workspace extends JLayeredPane implements ISupportMemento, RBParent
             } else {
                 blockCanvas.getJComponent().setPreferredSize(new Dimension(
                         blockCanvas.getWidth() - widget.getJComponent().getWidth(),
-                        blockCanvasLayer.getHeight()));
+                        blockCanvasLayer.getHeight() ));
             }
         }
         boolean success = workspaceWidgets.add(widget);

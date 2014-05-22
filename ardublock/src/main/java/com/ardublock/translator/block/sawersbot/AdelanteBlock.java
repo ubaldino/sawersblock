@@ -28,11 +28,19 @@ public class AdelanteBlock extends TranslatorBlock {
     
     translator.addSetupCommand("servo_pin_8.attach( 8 );\nservo_pin_9.attach( 9 );");
     
-    //   0   ->  90
-    //   90  ->  0
-	String secuencia = "servo_pin_8.attach( 8 );\nservo_pin_9.attach( 9 );";
-    secuencia += "servo_pin_8.write( "+( 90 + velocity )+" );\nservo_pin_9.write( "+( 90 - velocity )+" );\n";
+    if ( velocity > 90 ) {
+      velocity = 90;
+    }
+    if ( velocity < 0 ) {
+      velocity = 0;
+    }
+    tb = this.getRequiredTranslatorBlockAtSocket( 1 );
+    int offset_m1 = Integer.parseInt( tb.toCode() );
+    tb = this.getRequiredTranslatorBlockAtSocket( 2 );
+    int offset_m2 = Integer.parseInt( tb.toCode() );
     
+	String secuencia = "servo_pin_8.attach( 8 );\nservo_pin_9.attach( 9 );";
+    secuencia += "servo_pin_8.write( "+( 90 + velocity + offset_m1 )+" );\nservo_pin_9.write( "+( 90 - velocity - offset_m2 )+" );\n";
     
     return codePrefix + secuencia + codeSuffix+"\n";
   }

@@ -96,9 +96,9 @@ public class Page implements WorkspaceWidget, SearchableContainer, ISupportMemen
     /** The smallest value that this.minimumPixelWidth/zoom can be */
     private static final int DEFAULT_MINUMUM_WIDTH = 100;
     /** The default abstract width */
-    private static final int DEFAULT_ABSTRACT_WIDTH = 700;
+    private static final int DEFAULT_ABSTRACT_WIDTH = 2000;
     /** The default abstract height */
-    public static final int DEFAULT_ABSTRACT_HEIGHT = 100;
+    public static final int DEFAULT_ABSTRACT_HEIGHT = 20000;
     /** An empty string */
     private static final String emptyString = "";
     /** this.zoomLevel: zoom level state */
@@ -128,7 +128,7 @@ public class Page implements WorkspaceWidget, SearchableContainer, ISupportMemen
     private boolean hideMinimize = false;
     
     /** Standard background color of the UI **/
-    public static Color backgroundColor = new Color(12, 12, 12);
+    public static Color backgroundColor = new Color( 12 , 12 , 12 );
     //////////////////////////////
     //Constructor/ Destructor	//
     //////////////////////////////
@@ -374,7 +374,7 @@ public class Page implements WorkspaceWidget, SearchableContainer, ISupportMemen
      * @effects sets the name of this page to be newName.
      */
     public void setPageName(String newName) {
-        if (pageDrawer.equals(this.pageJComponent.getName())) {
+        if ( pageDrawer.equals( this.pageJComponent.getName() ) ) {
             pageDrawer = newName;
         }
 

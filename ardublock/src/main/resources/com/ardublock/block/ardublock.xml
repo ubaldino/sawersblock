@@ -1228,7 +1228,7 @@
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="string" connector-kind="socket" label="bc.message">
-					<DefaultArg genus-name="message" label="message" />
+					<DefaultArg genus-name="message" label="mensaje" />
 				</BlockConnector>
 				<BlockConnector connector-type="boolean" connector-kind="socket" label="bc.ln">
 					<DefaultArg genus-name="true" label="true" />
@@ -4614,6 +4614,12 @@
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.velocidad">
 					<DefaultArg genus-name="number" label="30" />
 				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.offset_m1">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.offset_m2">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
             </BlockConnectors>
 		</BlockGenus>
         <BlockGenus name="sawersbot_atras" kind="command" color="55 118 248" initlabel="bg.sawersbot_atras">
@@ -4628,6 +4634,12 @@
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.velocidad">
 					<DefaultArg genus-name="number" label="30" />
+				</BlockConnector>
+                <BlockConnector connector-type="number" connector-kind="socket" label="bc.offset_m1">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.offset_m2">
+					<DefaultArg genus-name="number" label="0" />
 				</BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
@@ -4644,6 +4656,12 @@
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.velocidad">
 					<DefaultArg genus-name="number" label="30" />
 				</BlockConnector>
+                <BlockConnector connector-type="number" connector-kind="socket" label="bc.offset_m1">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.offset_m2">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
         <BlockGenus name="sawersbot_derecha" kind="command" color="55 118 248" initlabel="bg.sawersbot_derecha">
@@ -4658,6 +4676,12 @@
             <BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.velocidad">
 					<DefaultArg genus-name="number" label="30" />
+				</BlockConnector>
+                <BlockConnector connector-type="number" connector-kind="socket" label="bc.offset_m1">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.offset_m2">
+					<DefaultArg genus-name="number" label="0" />
 				</BlockConnector>
             </BlockConnectors>
 		</BlockGenus>
@@ -4874,7 +4898,7 @@
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="string" connector-kind="socket" label="bc.message">
-					<DefaultArg genus-name="message" label="message" />
+					<DefaultArg genus-name="message" label="mensaje" />
 				</BlockConnector>
 				<BlockConnector connector-type="boolean" connector-kind="socket" label="bc.ln">
 					<DefaultArg genus-name="sawersbot_si" label="si" />
@@ -5427,13 +5451,14 @@
 		</BlockDrawerSet>
 	</BlockDrawerSets>
 
+    
 	<Pages drawer-with-page="yes">
 		<Page page-name="Main" page-width="400" />
 	</Pages>
 
-	<TrashCan>
-		<OpenTrashImage>com/ardublock/block/trash_open.png</OpenTrashImage>
-		<ClosedTrashImage>com/ardublock/block/trash.png</ClosedTrashImage>
-	</TrashCan>
+    	<TrashCan>
+          <OpenTrashImage>com/ardublock/block/trash_open.png</OpenTrashImage>
+          <ClosedTrashImage>com/ardublock/block/trash.png</ClosedTrashImage>
+        </TrashCan>
 
 </BlockLangDef>

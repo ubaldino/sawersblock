@@ -149,7 +149,6 @@ public class PageDrawerLoadingUtils {
                             }
                         }
                     }
-
                     if (isBlankPage) {
                         //place a blank page as the first page
                         workspace.putPage(page, 0);

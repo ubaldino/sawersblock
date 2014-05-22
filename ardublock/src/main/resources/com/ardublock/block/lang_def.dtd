@@ -73,9 +73,9 @@
 <!ATTLIST Stub scope CDATA #IMPLIED>
 <!ATTLIST Stub stub-genus (getter|setter|caller|agent|inc) #REQUIRED>
 
-<!-- Defines the images that are drawn on the block itself. 
-     Note: For now, only one image is enabled and wrap-text and image-editable have no effect.
-     Note: make sure FileLocation specified is relative to workspace directory -->
+<!--Define las imágenes que se dibujan en el mismo bloque.
+      Nota: Por el momento, sólo una imagen está habilitado y envoltura de texto y editar la imagen no tendrá efecto.
+      Nota: asegúrese de que FileLocation especificada es relativa al directorio de espacio de trabajo -->
 <!ELEMENT Images (Image)>
 <!ELEMENT Image (FileLocation)>
 <!ATTLIST Image wrap-text (yes|no) "no">
@@ -102,9 +102,10 @@
 <!ATTLIST BlockDrawerSet type (bar|stack) "bar">
 <!ATTLIST BlockDrawerSet name CDATA #REQUIRED>
 <!ATTLIST BlockDrawerSet location (east|west|north|south|northeast|southeast|southwest|northwest) "west">
-<!-- window-per-drawer specifies if each drawer should be its own draggable window.  otherwise, all the drawers 
-	are contained within one draggable window and only one drawer can be opened at once. 
-	Whether or not the window is draggable depends if drawer-draggable is set to "yes." --> 
+<!-- 
+ventana-per-cajón especifica si cada cajón debe ser su propia ventana se puede arrastrar. de lo contrario, todos los cajones
+están contenidas dentro de una ventana arrastrable y sólo un cajón se puede abrir a la vez.
+Independientemente de si la ventana es arrastrable depende si cajón arrastrable está ajustado a "sí". --> 
 <!ATTLIST BlockDrawerSet window-per-drawer (yes|no) "yes">
 <!ATTLIST BlockDrawerSet drawer-draggable (yes|no) "yes">
 <!-- the width of all the drawers within this set -->
@@ -120,16 +121,17 @@
 <!ELEMENT Separator EMPTY>
 <!ELEMENT NextLine EMPTY>
 
-<!-- Defines Pages dividing the Block Canvas and the optional PageDrawers associated with them
-     Each Page can have only one PageDrawer.  
-     For now, every page must have a drawer or no pages can have drawers.
-     The block canvas need not contain any pages.  You may choose to have
-     a blank canvas instead of a canvas of pages.
+<!-- 
+Define Páginas dividen el lienzo de bloques y los PageDrawers opcionales asociados con ellos
+      Cada página puede tener sólo una PageDrawer.
+      Por ahora, cada página debe tener un cajón o hay páginas puede tener cajones.
+      El lienzo de bloques necesitan no contiene ninguna página. Usted puede optar por tener
+      un lienzo en blanco en lugar de un lienzo de páginas.
 -->
 <!ELEMENT Pages (Page*)>
 <!-- 
-	 drawer-with-page auto generates a new drawer for each new page created by a user 
-     and creates an empty drawer for each page that does not specify a page drawer 
+	 cajón con páginas auto genera un nuevo cajón para cada nueva página creada por un usuario
+      y crea un cajón vacío para cada página que no especifica un cajón página 
 -->
 <!ATTLIST Pages drawer-with-page (yes|no) "no">
 <!ELEMENT Page (PageDrawer?)>
@@ -141,23 +143,23 @@
 
 <!ELEMENT PageDrawer (BlockGenusMember*)>
 
-<!-- If specified a trash can will appear on the workspace.
-	For both of its child elements, a location for the images should be specified relative to the working directory.
-	The open trash image appears when a user drags a block over the trashcan.  The closed trash image is the default 
-	image during steady state. 
+<!-- Si se especifica una papelera aparecerá en el espacio de trabajo.
+Por tanto de sus elementos secundarios, un lugar para las imágenes debe ser especificado relativo al directorio de trabajo.
+La imagen de basura abierto aparece cuando un usuario arrastra un bloque sobre la papelera. La imagen de basura cerrado es el predeterminado
+imagen durante el estado estacionario. 
      -->
-<!ELEMENT TrashCan (OpenTrashImage, ClosedTrashImage)>
+<!ELEMENT TrashCan (OpenTrashImage,ClosedTrashImage)>
 <!ELEMENT OpenTrashImage (#PCDATA)>
 <!ELEMENT ClosedTrashImage (#PCDATA)>
 
-<!-- By default, a minimap will always appear in the upper right corner
-  	 of the block canvas, unless enabled is set to "no." 
+<!-- Por defecto, un minimapa siempre aparecerá en la esquina superior derecha
+   del lienzo bloque, a menos que Enabled se establece en "no".
   	 -->
 <!ELEMENT MiniMap EMPTY>
 <!ATTLIST MiniMap enabled (yes|no) "yes">
 
-<!-- By default, typeblocking will be enabled, such that when the user types onto the canvas
-	 blocks will fly out that match the entered text.
+<!--Por defecto, typeblocking se habilitará, de forma que cuando el usuario escribe en el lienzo
+    bloques volarán que coincide con el texto introducido.
   	 -->
 <!ELEMENT Typeblocking EMPTY>
 <!ATTLIST Typeblocking enabled (yes|no) "yes">

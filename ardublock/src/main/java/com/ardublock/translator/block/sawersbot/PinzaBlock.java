@@ -32,7 +32,8 @@ public class PinzaBlock extends TranslatorBlock {
     else
       //paso = ( 90 - ( 90 * ( valor_porcentual / (float)100  ) ) ) ;
       paso = ( 175 ) ;
-    String secuencia = "servo_pin_7.write( " + (int)Math.round( paso ) + " );\nservo_pin_7.detach();\n";
+    //String secuencia = "servo_pin_7.write( " + (int)Math.round( paso ) + " );\nservo_pin_7.detach();\n";
+    String secuencia = "servo_pin_7.write( " + (int)Math.round( paso ) + " );\n";
     return codePrefix + secuencia + codeSuffix;
   }
 

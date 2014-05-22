@@ -1,5 +1,6 @@
 package edu.mit.blocks.workspace;
 
+import edu.mit.blocks.codeblocks.JComponentDragHandler;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -32,7 +33,7 @@ public class TrashCan extends JComponent implements MouseListener, WorkspaceWidg
         this.tcImage = trashCanImage;
         this.openedTcImage = openedTrashCanImage;
         currentImage = tcImage;
-        int width = 0, height = 0;
+        int width = 0 , height = 0;
 
         if (tcImage.getWidth(null) > openedTcImage.getWidth(null)) {
             width = tcImage.getWidth(null);
@@ -46,7 +47,7 @@ public class TrashCan extends JComponent implements MouseListener, WorkspaceWidg
             height = openedTcImage.getHeight(null);
         }
         if (width > 0 && height > 0) {
-            setSize(width, height);
+            setSize( width , height );
             setPreferredSize(new Dimension(width, height));
         } else {
             setSize(150, 200);
@@ -59,10 +60,10 @@ public class TrashCan extends JComponent implements MouseListener, WorkspaceWidg
         addMouseListener(this);
         workspace.addComponentListener(this);
 
-        //to make draggable, uncomment
-        //JComponentDragHandler dragHandler = new JComponentDragHandler(this);
-        //addMouseListener(dragHandler);
-        //addMouseMotionListener(dragHandler);
+        //para que se pueda arrastrar, uncomment
+        JComponentDragHandler dragHandler = new JComponentDragHandler(this);
+        addMouseListener(dragHandler);
+        addMouseMotionListener(dragHandler);
     }
 
     public void paint(Graphics g) {

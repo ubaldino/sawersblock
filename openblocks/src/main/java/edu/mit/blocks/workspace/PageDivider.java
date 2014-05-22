@@ -91,7 +91,7 @@ public class PageDivider extends JComponent implements MouseListener, MouseMotio
         g.setColor(DIVIDER_COLOR);
         g.drawLine(getWidth() / 2, 0, getWidth() / 2, getHeight());
         if (mouseIn) {
-            g.fillRect(getWidth() / 2 - 1, 0, 3, getHeight());
+            g.fillRect(getWidth() / 2 - 1, 0, 3, getHeight() );
         }
     }
 
