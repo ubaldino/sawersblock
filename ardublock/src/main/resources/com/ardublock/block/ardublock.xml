@@ -1224,7 +1224,7 @@
 
 		<BlockGenus name="serial_print" kind="command" color="245 245 245" initlabel="bg.serial_print">
 			<description>
-				<text>send message via Serial port</text>
+				<text>Enviar mensaje por puerto serial</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="string" connector-kind="socket" label="bc.message">
@@ -1238,7 +1238,7 @@
 
 		<BlockGenus name="message" kind="data" color="245 245 245" initlabel="bg.message" editable-label="yes">
 			<description>
-				<text>string message</text>
+				<text>mensaje cadena</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="string" connector-kind="plug" />
@@ -1248,7 +1248,7 @@
 
 		<BlockGenus name="glue_sn" kind="data" color="245 245 245" initlabel="bg.glue_sn">
 			<description>
-				<text>glue number to string</text>
+				<text>pegar número a cadena</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="string" connector-kind="plug" />
@@ -1258,7 +1258,7 @@
 
 		<BlockGenus name="glue_sb" kind="data" color="245 245 245" initlabel="bg.glue_sb">
 			<description>
-				<text>glue boolean to string</text>
+				<text>pegar boolean a cadena</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="string" connector-kind="plug" />
@@ -1278,7 +1278,7 @@
 
 		<BlockGenus name="wire_write" kind="command" color="245 245 245" initlabel="bg.wire_write">
 			<description>
-				<text>write data via I2C</text>
+				<text>escribir datos via I2C</text>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.device_address">

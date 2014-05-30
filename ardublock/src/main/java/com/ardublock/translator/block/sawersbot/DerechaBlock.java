@@ -38,7 +38,7 @@ public class DerechaBlock extends TranslatorBlock {
     int offset_m2 = Integer.parseInt( tb.toCode() );
     
 	String secuencia = "servo_pin_8.attach( 8 );\nservo_pin_9.attach( 9 );";
-    secuencia += "servo_pin_8.write( "+( 90 + velocity + offset_m1 )+" );\nservo_pin_9.write( "+( 90 - velocity - offset_m2 )+" );\n";
+    secuencia += "servo_pin_8.write( "+( 90 - velocity - offset_m1 )+" );\nservo_pin_9.write( "+( 90 - velocity - offset_m2 )+" );\n";
     return codePrefix + secuencia + codeSuffix;  
   }
 
