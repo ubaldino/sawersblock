@@ -943,11 +943,37 @@
 
 			</BlockConnectors>
 		</BlockGenus>
+        
+		<BlockGenus name="setter_variable_string" kind="command" color="236 45 45" initlabel="bg.setter_variable_string">
+			<description>
+				<text>crear una variable string</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="poly" connector-kind="socket" label="bc.variable">
+					<DefaultArg genus-name="variable_string" label="String variable name" />
+				</BlockConnector>
+				<BlockConnector connector-type="poly" connector-kind="socket" label="String">
+					<DefaultArg genus-name="char" label="AA" />
+				</BlockConnector>
+
+			</BlockConnectors>
+		</BlockGenus>
 
 		<BlockGenus name="variable_poly" kind="data" initlabel="bg.variable_poly" editable-label="yes" is-label-value="yes" color="236 45 236">
 			<description>
 				<text>
 					character variable
+				</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="poly" connector-kind="plug" position-type="mirror" />
+			</BlockConnectors>
+		</BlockGenus>
+        
+		<BlockGenus name="variable_string" kind="data" initlabel="bg.variable_string" editable-label="yes" is-label-value="yes" color="236 45 236">
+			<description>
+				<text>
+					String variable
 				</text>
 			</description>
 			<BlockConnectors>
@@ -4892,7 +4918,7 @@
                
 		</BlockGenus>
         
-        <BlockGenus name="bluetooth_print_string" kind="command" color="55 118 248" initlabel="bg.serial_print_string">
+        <BlockGenus name="bluetooth_print_string" kind="command" color="55 118 248" initlabel="bg.bluetooth_print_string">
 			<description>
 				<text>Enviar texto por bluetooth</text>
 			</description>
@@ -4904,6 +4930,17 @@
 					<DefaultArg genus-name="sawersbot_si" label="si" />
 				</BlockConnector>
 			</BlockConnectors>
+            <Images>
+              <Image>
+                <FileLocation>com/ardublock/block/workshop/sawerbot/bt.png</FileLocation>
+              </Image>
+            </Images>
+		</BlockGenus>
+        
+        <BlockGenus name="bluetooth_flush" kind="command" color="55 118 248" initlabel="bg.bluetooth_flush">
+			<description>
+				<text>Limpiar datos del puerto</text>
+			</description>
             <Images>
               <Image>
                 <FileLocation>com/ardublock/block/workshop/sawerbot/bt.png</FileLocation>
@@ -5173,7 +5210,9 @@
 				<BlockGenusMember>create_variable_vector</BlockGenusMember>
 				<BlockGenusMember>setter_variable_vector</BlockGenusMember>
 				<BlockGenusMember>setter_variable_char</BlockGenusMember>
+				<BlockGenusMember>setter_variable_string</BlockGenusMember>
 				<BlockGenusMember>variable_poly</BlockGenusMember>
+				<BlockGenusMember>variable_string</BlockGenusMember>
 				<BlockGenusMember>char</BlockGenusMember>
 			</BlockDrawer>
 			<!--
@@ -5406,6 +5445,7 @@
 			    <BlockGenusMember>bluetooth_read_string</BlockGenusMember>
 			    <BlockGenusMember>bluetooth_print_string</BlockGenusMember>
 			    <BlockGenusMember>bluetooth_disponible</BlockGenusMember>
+			    <BlockGenusMember>bluetooth_flush</BlockGenusMember>
 			    <BlockGenusMember>pulsador_disponible</BlockGenusMember>
                 
 			    <!--<BlockGenusMember>sawersbot_pinza_abrir</BlockGenusMember>-->

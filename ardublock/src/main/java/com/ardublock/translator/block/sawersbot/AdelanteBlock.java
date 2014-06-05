@@ -35,13 +35,23 @@ public class AdelanteBlock extends TranslatorBlock {
       velocity = 0;
     }
     tb = this.getRequiredTranslatorBlockAtSocket( 1 );
-    int offset_m1 = Integer.parseInt( tb.toCode() );
+    
+    String secuencia = "";
+    
+    secuencia += ( SawersBotUtil.isNumeric( tb.toCode() ) ) ? Integer.parseInt( tb.toCode() ) : tb.toCode() ;
+    
     tb = this.getRequiredTranslatorBlockAtSocket( 2 );
-    int offset_m2 = Integer.parseInt( tb.toCode() );
     
-	String secuencia = "servo_pin_8.attach( 8 );\nservo_pin_9.attach( 9 );";
+    secuencia += " : ";
+    secuencia += ( SawersBotUtil.isNumeric( tb.toCode() ) ) ? Integer.parseInt( tb.toCode() ) : tb.toCode() ;
+
+	/*
+    String secuencia = "servo_pin_8.attach( 8 );\nservo_pin_9.attach( 9 );";
     secuencia += "servo_pin_8.write( "+( 90 + velocity + offset_m1 )+" );\nservo_pin_9.write( "+( 90 - velocity - offset_m2 )+" );\n";
+    */
     
+    System.out.println( secuencia );
     return codePrefix + secuencia + codeSuffix+"\n";
   }
 }
+

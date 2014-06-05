@@ -17,10 +17,16 @@ public class EqualPolyBlock extends TranslatorBlock
 		String ret = "( ( ";
 		TranslatorBlock tb = this.getRequiredTranslatorBlockAtSocket(0);
 		ret = ret + tb.toCode();
-		ret = ret + " ) == (\'";
 		tb = this.getRequiredTranslatorBlockAtSocket(1);
-		ret = ret + tb.toCode().replace("\"","");
-		ret = ret + "\') )";
+        if ( tb.toCode().length() == 3 ) {
+            ret = ret + " ) == (\'";
+    		ret = ret + tb.toCode().replace("\"","");
+    		ret = ret + "\') )";
+        } else{
+            ret +=  " ) == ( ";
+            ret +=  tb.toCode();
+    		ret +=  " ) )";
+        }
 		return codePrefix + ret + codeSuffix;
 	}
 }

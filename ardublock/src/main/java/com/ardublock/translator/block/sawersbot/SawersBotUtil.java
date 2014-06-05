@@ -15,5 +15,15 @@ public class SawersBotUtil {
   public static void setupSerial1(Translator translator) {
     translator.addSetupCommand( "Serial1.begin( 9600 );" );
   }
+  
+  public static boolean isNumeric( String input ) {
+    try {
+      Integer.parseInt(input);
+      return true;
+    }
+    catch (NumberFormatException e) {
+      return false;
+    }
+  }
 
 }

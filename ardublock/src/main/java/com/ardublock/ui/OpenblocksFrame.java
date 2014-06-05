@@ -67,9 +67,11 @@ public class OpenblocksFrame extends JFrame {
         this.setTitle(makeFrameTitle());
         this.setSize(new Dimension(1024, 760));
         this.setLayout(new BorderLayout());
+        /**
         Image retValue = Toolkit.getDefaultToolkit().getImage( ClassLoader.getSystemResource("icono.png") );
         System.out.println( "\n\n"  );
         this.setIconImage( retValue );
+        **/
         //put the frame to the center of screen
         this.setLocationRelativeTo(null);
         //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

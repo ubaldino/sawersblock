@@ -18,8 +18,20 @@ public class BluetoothReadStringBlock extends TranslatorBlock
 	@Override
 	public String toCode() throws SocketNullException, SubroutineNotDeclaredException {
 		SawersBotUtil.setupSerial1(translator);
+
+        translator.addDefinitionCommand(
+                  "String bluetoothString()"
+                + "{\n"
+                + "  String cadena = \"\";\n"
+                + "    while( Serial1.available() )"
+                + "    {\n"
+                + "      cadena += char( Serial1.read() );\n"
+                + "      delay( 3 );\n"
+                + "    }\n"
+                + "  return cadena;\n"
+                + "}");
         
-		String ret = "Serial1.read()";
+		String ret = "bluetoothString()";
 		return codePrefix + ret + codeSuffix;
 	}
 }
