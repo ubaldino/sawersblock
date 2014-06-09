@@ -14,17 +14,10 @@ public class IzquierdaBlock extends TranslatorBlock {
 
   @Override
   public String toCode() throws SocketNullException, SubroutineNotDeclaredException {
-    //SawersBotUtil.setupEnv(translator);
+    SawersBotUtil.setupServosRueda(translator);
     
     TranslatorBlock tb = this.getRequiredTranslatorBlockAtSocket( 0 );
-    
     int velocity = Integer.parseInt( tb.toCode() );
-    
-    translator.addHeaderFile("Servo.h");
-    translator.addDefinitionCommand("Servo servo_pin_8;");
-    translator.addDefinitionCommand("Servo servo_pin_9;");
-    
-    translator.addSetupCommand("servo_pin_8.attach( 8 );\nservo_pin_9.attach( 9 );");
     
     if ( velocity > 90 ) {
       velocity = 90;
