@@ -4961,7 +4961,7 @@
         
         <BlockGenus name="pulsador_disponible" kind="data" color="55 118 248" initlabel="bg.pulsador_disponible">
 			<BlockConnectors>
-				<BlockConnector connector-type="number" connector-kind="plug" position-type="mirror" />
+				<BlockConnector connector-kind="plug" connector-type="boolean" position-type="mirror" />
 			</BlockConnectors>
             <Images>
               <Image>

@@ -67,6 +67,7 @@ public class OpenblocksFrame extends JFrame {
         this.setTitle(makeFrameTitle());
         this.setSize(new Dimension(1024, 760));
         this.setLayout(new BorderLayout());
+
         /**
         Image retValue = Toolkit.getDefaultToolkit().getImage( ClassLoader.getSystemResource("icono.png") );
         System.out.println( "\n\n"  );
@@ -79,9 +80,9 @@ public class OpenblocksFrame extends JFrame {
         uiMessageBundle = ResourceBundle.getBundle("com/ardublock/block/ardublock");
 
         fileChooser = new JFileChooser();
-        ffilter = new FileNameExtensionFilter(uiMessageBundle.getString("ardublock.file.suffix"), "abp");
-        fileChooser.setFileFilter(ffilter);
-        fileChooser.addChoosableFileFilter(ffilter);
+        ffilter = new FileNameExtensionFilter( uiMessageBundle.getString("ardublock.file.suffix") , "abp" );
+        fileChooser.setFileFilter( ffilter );
+        fileChooser.addChoosableFileFilter( ffilter );
 
         initOpenBlocks();
     }
@@ -122,7 +123,7 @@ public class OpenblocksFrame extends JFrame {
         saveImageButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 Dimension size = workspace.getCanvasSize();
-                System.out.println("size: " + size);
+                System.out.println("size: " + size );
                 BufferedImage bi = new BufferedImage(1280, 2560, BufferedImage.TYPE_INT_RGB);
                 Graphics g = bi.createGraphics();
                 workspace.getBlockCanvas().getPageAt(0).getJComponent().paint(g);
@@ -164,7 +165,7 @@ public class OpenblocksFrame extends JFrame {
                 }
             }
         });
-        JLabel versionLabel = new JLabel("v " + uiMessageBundle.getString("ardublock.ui.version"));
+        JLabel versionLabel = new JLabel("v " + uiMessageBundle.getString("ardublock.ui.version") );
 
         bottomPanel.add(saveImageButton);
         bottomPanel.add(websiteButton);
@@ -298,11 +299,11 @@ public class OpenblocksFrame extends JFrame {
                 return;
             }
         }
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        this.setCursor( Cursor.getPredefinedCursor( Cursor.WAIT_CURSOR ) );
         context.resetWorksapce();
         context.setWorkspaceChanged(false);
-        this.setTitle(this.makeFrameTitle());
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+        this.setTitle( this.makeFrameTitle() );
+        this.setCursor( Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR) );
     }
 
     private File checkFileSuffix(File saveFile) {

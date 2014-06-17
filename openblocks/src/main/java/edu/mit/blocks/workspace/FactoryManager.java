@@ -115,7 +115,8 @@ public class FactoryManager implements WorkspaceWidget, ComponentListener, Works
     public FactoryManager(Workspace workspace) {
         this.workspace = workspace;
         this.navigator = new Navigator(workspace);
-        this.navigator.getJComponent().setPreferredSize(new Dimension(160, 600));
+        // nanega el tamanio del panel de funciones
+        this.navigator.getJComponent().setPreferredSize(new Dimension(180, 600));
         this.navigator.addExlorer(STATIC_NAME);
         this.navigator.addExlorer(DYNAMIC_NAME);
         this.navigator.addExlorer(SUBSETS_NAME);

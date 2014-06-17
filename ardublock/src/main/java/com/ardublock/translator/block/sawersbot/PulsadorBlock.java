@@ -17,9 +17,7 @@ public class PulsadorBlock extends TranslatorBlock {
 
   @Override
   public String toCode() throws SocketNullException, SubroutineNotDeclaredException {
-    
     translator.addSetupCommand( "pinMode( 4 , INPUT );" );
-    String ret = "digitalRead( 4 );";
-    return ret;
+    return " digitalRead( 4 ) ";
   }
 }

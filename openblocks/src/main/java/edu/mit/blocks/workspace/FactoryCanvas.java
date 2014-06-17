@@ -122,7 +122,8 @@ class FactoryCanvas extends JPanel implements Canvas, SearchableContainer, RBPar
         block.setHighlightParent(this);
         block.removeComponentListener(this);
     }
-
+    
+    // todos los bloques por menu
     void layoutBlocks() {
         RenderableBlock rb;
         int maxWidth = 20;

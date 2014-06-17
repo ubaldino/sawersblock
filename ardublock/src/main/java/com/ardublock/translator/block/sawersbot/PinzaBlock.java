@@ -17,7 +17,7 @@ public class PinzaBlock extends TranslatorBlock {
     //SawersBotUtil.setupEnv(translator);
     translator.addHeaderFile("Servo.h");
     translator.addDefinitionCommand("Servo servo_pin_7;");
-    translator.addSetupCommand("servo_pin_7.attach( 7 );");
+    //translator.addSetupCommand("servo_pin_7.attach( 7 );");
     
     TranslatorBlock tb =  this.getRequiredTranslatorBlockAtSocket( 1 ) ;
     int valor_porcentual =  Integer.parseInt( tb.toCode() );
@@ -33,7 +33,8 @@ public class PinzaBlock extends TranslatorBlock {
       //paso = ( 90 - ( 90 * ( valor_porcentual / (float)100  ) ) ) ;
       paso = ( 175 ) ;
     //String secuencia = "servo_pin_7.write( " + (int)Math.round( paso ) + " );\nservo_pin_7.detach();\n";
-    String secuencia = "servo_pin_7.write( " + (int)Math.round( paso ) + " );\n";
+    String secuencia = "servo_pin_7.attach( 7 );"
+            + "servo_pin_7.write( " + (int)Math.round( paso ) + " );delay( 900 );servo_pin_7.detach();";
     return codePrefix + secuencia + codeSuffix;
   }
 
