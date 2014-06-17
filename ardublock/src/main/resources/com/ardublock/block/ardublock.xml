@@ -87,17 +87,15 @@
 				<text>
 					If
 					<arg n="1" />
-					is true, the agent will run the blocks attached to
+					Si , la condicion se cumple ejecuta un conjunto de indstrucciones
 					<arg n="2" />
 				</text>
 				<arg-description n="1" name="test">
-					The condition being
-					tested.
+					Condición
 				</arg-description>
 
 				<arg-description n="2" name="then">
-					The set of instructions
-					that is done when the condition is true.
+					Conjunto de instrucciones que realiza cuando la condición es verdadera.
 				</arg-description>
 			</description>
 			<BlockConnectors>
@@ -109,22 +107,18 @@
 		<BlockGenus name="ifelse" kind="command" initlabel="bg.ifelse" color="255 240 0">
 			<description>
 				<text>
-					Does the first set of commands if the condition specified is
-					true, otherwise it will do the second set of commands.
+					Ejecuta el primer conjunto de comandos si la condición se cumple , de lo contrario ejecutará la segunda serie de comandos.
 				</text>
 				<arg-description n="1" name="test">
-					The condition being
-					tested.
+					Condición
 				</arg-description>
 
 				<arg-description n="2" name="then">
-					The set of instructions
-					that is done when the condition is true.
+					Conjunto de instrucciones que realiza cuando la condición es verdadera.
 				</arg-description>
 
 				<arg-description n="3" name="else">
-					The set of instructions
-					that is done when the condition is false.
+					Conjunto de instrucciones que realiza cuando la condición es falso.
 				</arg-description>
 			</description>
 			<BlockConnectors>
