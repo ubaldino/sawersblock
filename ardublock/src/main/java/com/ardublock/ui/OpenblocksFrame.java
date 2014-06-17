@@ -35,8 +35,13 @@ import com.ardublock.ui.listener.SaveButtonListener;
 
 import edu.mit.blocks.controller.WorkspaceController;
 import edu.mit.blocks.workspace.Workspace;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import org.w3c.dom.css.RGBColor;
 
 public class OpenblocksFrame extends JFrame {
 
@@ -68,11 +73,10 @@ public class OpenblocksFrame extends JFrame {
         this.setSize(new Dimension(1024, 760));
         this.setLayout(new BorderLayout());
 
-        /**
-        Image retValue = Toolkit.getDefaultToolkit().getImage( ClassLoader.getSystemResource("icono.png") );
-        System.out.println( "\n\n"  );
-        this.setIconImage( retValue );
-        **/
+        //Image retValue = Toolkit.getDefaultToolkit().getImage( ClassLoader.getSystemResource("icono.png") );
+        //System.out.println( "\n\n"  );
+        this.setIconImage( new ImageIcon( this.getClass().getResource("/com/ardublock/block/icono.png") ).getImage() );
+        
         //put the frame to the center of screen
         this.setLocationRelativeTo(null);
         //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -104,22 +108,43 @@ public class OpenblocksFrame extends JFrame {
         JPanel buttons = new JPanel();
         buttons.setLayout(new FlowLayout());
         JButton newButton = new JButton(uiMessageBundle.getString("ardublock.ui.new"));
+        newButton.setBackground( new Color( 0xBE213E ) );
+        newButton.setForeground(new Color( 0xFFFFFFF ) );
         newButton.addActionListener(new NewButtonListener(this));
         JButton saveButton = new JButton(uiMessageBundle.getString("ardublock.ui.save"));
+        saveButton.setBackground( new Color( 0xFF8A00 ) );
+        saveButton.setForeground( new Color( 0xFFFFFF ) );
         saveButton.addActionListener(new SaveButtonListener(this));
         JButton saveAsButton = new JButton(uiMessageBundle.getString("ardublock.ui.saveAs"));
+        saveAsButton.setBackground( new Color( 0x34A588 )  );
+        saveAsButton.setForeground(new Color( 0xFFFFFF )  );
         saveAsButton.addActionListener(new SaveAsButtonListener(this));
         JButton openButton = new JButton(uiMessageBundle.getString("ardublock.ui.load"));
+        openButton.setBackground( new Color( 0x99CC00 ));
+        openButton.setForeground(new Color( 0xFFFFFF ));
         openButton.addActionListener(new OpenButtonListener(this));
         JButton generateButton = new JButton(uiMessageBundle.getString("ardublock.ui.upload"));
+        generateButton.setBackground( new Color( 0xE30602 ) );
+        generateButton.setForeground(new Color( 0xFFFFFF ) );
+        
+        
+        /*ImageIcon iconb = new ImageIcon( this.getClass().getResource("/com/ardublock/block/icono.png") );
+        generateButton.setIcon( iconb );
+        */
+        
+        generateButton.setFont( generateButton.getFont().deriveFont( Font.BOLD ) );
         generateButton.addActionListener(new GenerateCodeButtonListener(this, context));
         JButton serialMonitorButton = new JButton(uiMessageBundle.getString("ardublock.ui.serialMonitor"));
+        serialMonitorButton.setBackground( new Color( 0x00933B ) );
+        serialMonitorButton.setForeground(new Color( 0xFFFFFF ) );
         serialMonitorButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 context.getEditor().handleSerial();
             }
         });
         JButton saveImageButton = new JButton(uiMessageBundle.getString("ardublock.ui.saveImage"));
+        saveImageButton.setBackground( new Color( 0x00696B ) );
+        saveImageButton.setForeground(new Color( 0xFFFFFF ) );
         saveImageButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 Dimension size = workspace.getCanvasSize();
@@ -151,6 +176,8 @@ public class OpenblocksFrame extends JFrame {
 
         JPanel bottomPanel = new JPanel();
         JButton websiteButton = new JButton(uiMessageBundle.getString("ardublock.ui.website"));
+        websiteButton.setBackground( new Color( 0x33B5E5 ) );
+        websiteButton.setForeground(new Color( 0x000000 ) );    
         websiteButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
