@@ -4627,7 +4627,7 @@
             
 			<Images>
 				<Image>
-					<FileLocation>com/ardublock/block/workshop/arriba.png</FileLocation>
+					<FileLocation>com/ardublock/block/workshop/sawerbot/arriba.png</FileLocation>
 				</Image>
 			</Images>
             <BlockConnectors>
@@ -4648,7 +4648,7 @@
 			</description>
             <Images>
 				<Image>
-					<FileLocation>com/ardublock/block/workshop/abajo.png</FileLocation>
+					<FileLocation>com/ardublock/block/workshop/sawerbot/abajo.png</FileLocation>
 				</Image>
 			</Images>
 			<BlockConnectors>
@@ -4669,7 +4669,7 @@
 			</description>
 			<Images>
 				<Image>
-					<FileLocation>com/ardublock/block/workshop/atras.png</FileLocation>
+					<FileLocation>com/ardublock/block/workshop/sawerbot/atras.png</FileLocation>
 				</Image>
 			</Images>
             <BlockConnectors>
@@ -4690,7 +4690,7 @@
 			</description>
 			<Images>
 				<Image>
-					<FileLocation>com/ardublock/block/workshop/adelante.png</FileLocation>
+					<FileLocation>com/ardublock/block/workshop/sawerbot/adelante.png</FileLocation>
 				</Image>
 			</Images>
             <BlockConnectors>
@@ -4711,7 +4711,7 @@
 			</description>
 			<Images>
 				<Image>
-					<FileLocation>com/ardublock/block/workshop/stop.png</FileLocation>
+					<FileLocation>com/ardublock/block/workshop/sawerbot/stop.png</FileLocation>
 				</Image>
 			</Images>
 		</BlockGenus>
@@ -4731,7 +4731,7 @@
 			</BlockConnectors>
 			<Images>
 				<Image>
-					<FileLocation>com/ardublock/block/workshop/garra.png</FileLocation>
+					<FileLocation>com/ardublock/block/workshop/sawerbot/garra.png</FileLocation>
 				</Image>
 			</Images>
 		</BlockGenus>
@@ -4739,7 +4739,7 @@
              
         <BlockGenus name="sawersbot_led" kind="command" color="55 118 248" initlabel="bg.sawersbot_led">
 			<description>
-				<text>Sensor refectivo cny70</text>
+				<text>Luz pin 13</text>
 			</description>
             <BlockConnectors>
                 <BlockConnector connector-type="boolean" connector-kind="socket">
@@ -4748,7 +4748,27 @@
 			</BlockConnectors>
 			<Images>
 				<Image>
-					<FileLocation>com/ardublock/block/workshop/led.png</FileLocation>
+					<FileLocation>com/ardublock/block/workshop/sawerbot/led.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
+        
+        
+        <BlockGenus name="sawersbot_luces" kind="command" color="55 118 248" initlabel="bg.sawersbot_luces">
+			<description>
+				<text>Luces</text>
+			</description>
+            <BlockConnectors>
+                <BlockConnector connector-type="number" connector-kind="socket" label="#">
+					<DefaultArg genus-name="number" label="1" />
+				</BlockConnector>
+                <BlockConnector connector-type="boolean" connector-kind="socket">
+					<DefaultArg genus-name="digital-high" label="ALTO" />
+				</BlockConnector>
+			</BlockConnectors>
+			<Images>
+				<Image>
+					<FileLocation>com/ardublock/block/workshop/sawerbot/led.png</FileLocation>
 				</Image>
 			</Images>
 		</BlockGenus>
@@ -4763,7 +4783,7 @@
 			</BlockConnectors>
 			<Images>
 				<Image>
-					<FileLocation>com/ardublock/block/workshop/ultrasonic.png</FileLocation>
+					<FileLocation>com/ardublock/block/workshop/sawerbot/ultrasonic.png</FileLocation>
 				</Image>
 			</Images>
 		</BlockGenus>
@@ -5426,6 +5446,7 @@
             -->
             <BlockDrawer button-color="194 83 2" name="bd.sawersbot">
                 <BlockGenusMember>sawersbot_led</BlockGenusMember>
+                <BlockGenusMember>sawersbot_luces</BlockGenusMember>
 			    <BlockGenusMember>sawersbot_adelante</BlockGenusMember>
 			    <BlockGenusMember>sawersbot_atras</BlockGenusMember>
 			    <BlockGenusMember>sawersbot_izquierda</BlockGenusMember>
