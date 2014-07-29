@@ -25,16 +25,20 @@ public class PinzaBlock extends TranslatorBlock {
     tb = this.getRequiredTranslatorBlockAtSocket( 0 );
     
     float paso;
+    int delay;
     
-    if ( tb.toCode().equals( "cerrar" ) )
+    if ( tb.toCode().equals( "cerrar" ) ){
             //paso = ( 90 * ( valor_porcentual / (float)100  ) ) ;
-        paso = ( 50 ) ;
-    else
+        paso = ( 80 ) ;
+        delay = 600;
+    }else{
       //paso = ( 90 - ( 90 * ( valor_porcentual / (float)100  ) ) ) ;
+      delay = 800;
       paso = ( 175 ) ;
+    }
     //String secuencia = "servo_pin_7.write( " + (int)Math.round( paso ) + " );\nservo_pin_7.detach();\n";
     String secuencia = "servo_pin_7.attach( 7 );"
-            + "servo_pin_7.write( " + (int)Math.round( paso ) + " );delay( 900 );servo_pin_7.detach();";
+            + "servo_pin_7.write( " + (int)Math.round( paso ) + " );delay( "+delay +" );servo_pin_7.detach();";
     return codePrefix + secuencia + codeSuffix;
   }
 

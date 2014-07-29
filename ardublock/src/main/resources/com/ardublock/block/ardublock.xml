@@ -938,7 +938,7 @@
 			</BlockConnectors>
 		</BlockGenus>
         
-		<BlockGenus name="setter_variable_string" kind="command" color="236 45 45" initlabel="bg.setter_variable_string">
+		<BlockGenus name="setter_variable_string" kind="command" color="23 45 45" initlabel="bg.setter_variable_string">
 			<description>
 				<text>crear una variable string</text>
 			</description>
@@ -953,7 +953,7 @@
 			</BlockConnectors>
 		</BlockGenus>
 
-		<BlockGenus name="variable_poly" kind="data" initlabel="bg.variable_poly" editable-label="yes" is-label-value="yes" color="236 45 236">
+		<BlockGenus name="variable_poly" kind="data" initlabel="bg.variable_poly" editable-label="yes" is-label-value="yes" color="236 45 45">
 			<description>
 				<text>
 					character variable
@@ -964,7 +964,7 @@
 			</BlockConnectors>
 		</BlockGenus>
         
-		<BlockGenus name="variable_string" kind="data" initlabel="bg.variable_string" editable-label="yes" is-label-value="yes" color="236 45 236">
+		<BlockGenus name="variable_string" kind="data" initlabel="bg.variable_string" editable-label="yes" is-label-value="yes" color="23 45 45">
 			<description>
 				<text>
 					String variable
@@ -5254,12 +5254,12 @@
 				<BlockGenusMember>bleshield_available</BlockGenusMember>
 				<BlockGenusMember>bleshield_read_poly</BlockGenusMember>	
 			</BlockDrawer>
-			-->
             <BlockDrawer button-color="252 137 2" name="bd.especial" type="factory">
 				<BlockGenusMember>code_head</BlockGenusMember>
 				<BlockGenusMember>code_setup</BlockGenusMember>
 				<BlockGenusMember>code_loop</BlockGenusMember>
 			</BlockDrawer>
+			-->
             
 			<!--<BlockDrawer button-color="13 152 164" name="bd.tinkerkit" type="factory">
 				<BlockGenusMember>Tinker_LED</BlockGenusMember>
@@ -5441,7 +5441,7 @@
 			    <BlockGenusMember>bluetooth_disponible</BlockGenusMember>
 			    <BlockGenusMember>bluetooth_flush</BlockGenusMember>
 			    <BlockGenusMember>pulsador_disponible</BlockGenusMember>
-                
+                <BlockGenusMember>servo_default</BlockGenusMember>
 			    <!--<BlockGenusMember>sawersbot_pinza_abrir</BlockGenusMember>-->
 			</BlockDrawer>
 			

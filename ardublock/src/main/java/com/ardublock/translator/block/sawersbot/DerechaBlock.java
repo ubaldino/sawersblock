@@ -27,8 +27,8 @@ SawersBotUtil.setupServosRueda(translator);
             int valor_entero = Integer.parseInt( valor );
             if ( valor_entero > 90) valor_entero = 90;
             if ( valor_entero < 0) valor_entero = 0;
-            servo_8 += servo_inicial + valor_entero;
-            servo_9 += servo_inicial + valor_entero;
+            servo_8 += servo_inicial - valor_entero;
+            servo_9 += servo_inicial - valor_entero;
         } else {
             servo_8 += servo_inicial + " - " + valor;
             servo_9 += servo_inicial + " - " + valor;
